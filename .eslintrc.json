@@ -4,7 +4,7 @@
     "plugin:prettier/recommended",
     "plugin:prettier/react"
   ],
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "eslint-plugin-prettier"],
   "rules": {
     "react/react-in-jsx-scope": "off"
   },
