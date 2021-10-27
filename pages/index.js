@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Navbar from './navbar'
 
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
       </Head>
 
       <main >
-        <h1>The home page</h1>
+        <Navbar />
       </main>
     </div>
   )
