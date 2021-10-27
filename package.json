@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.1",
+    "@heroicons/react": "^1.0.5",
+    "@tailwindcss/forms": "^0.3.4",
     "@prisma/client": "^3.3.0",
     "next": "11.1.2",
     "react": "17.0.2",
@@ -18,8 +21,11 @@
     "redux-thunk": "^2.4.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.7",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.17",
     "prisma": "^3.3.0"
   }
 }
