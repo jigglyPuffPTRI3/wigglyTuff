@@ -8,13 +8,12 @@ export const getServerSideProps = async ({ params }) => {
     include: {
       author: {
         select: { name: true },
-      }
+      },
     },
   });
   return { props: { review } };
 };
 
 export default function Review({ review }) {
-  console.log('review', review)
-  return <h1>Review</h1>
+  return <h1>Review</h1>;
 }
