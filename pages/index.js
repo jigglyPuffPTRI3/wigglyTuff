@@ -1,8 +1,19 @@
+import { useEffect, useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
+import prisma from '../lib/prisma';
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const reviews = await prisma.review.findMany({
+    where: { published: true },
+  });
+  return { props: { reviews } };
+};
+
+export default function Home({ reviews }) {
+  console.log('reviews', reviews)
+
   return (
     <div className={styles.container}>
       <Head>
