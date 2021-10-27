@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -10,14 +10,14 @@ module.exports = {
       },
     },
     screens: {
-      'mobile': '320px',
-      'tablets': '481px',
-      'laptops': '769px',
-      'desktop': '1025px'
-    }
+      mobile: '320px',
+      tablets: '481px',
+      laptops: '769px',
+      desktop: '1025px',
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [require('@tailwindcss/forms')],
-}
+};

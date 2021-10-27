@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <Component {...pageProps} />
     </Provider>
-    )
+  );
 }
 
-export default MyApp
+export default MyApp;

@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
@@ -22,10 +22,21 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.3.7",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
     "postcss": "^8.3.11",
     "tailwindcss": "^2.2.17",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1",
     "prisma": "^3.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run lint"
+    }
   }
 }
