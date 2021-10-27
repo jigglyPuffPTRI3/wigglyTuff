@@ -1,17 +1,21 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import Head from 'next/head'
+import prisma from '../lib/prisma';
+import styles from '../styles/Home.module.css'
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux'; 
 import { formActionCreators } from '../redux';
 
-export default function Home() {
-
+export const getStaticProps = async () => {
+  const reviews = await prisma.review.findMany({
+    where: { published: true },
+  });
+  return { props: { reviews } };
+};
+export default function Home({ reviews }) {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const {updateFirstName, updateLastName} = bindActionCreators(formActionCreators, dispatch);
-  
-  console.log(state)
+
   return (
     <div className={styles.container}>
       <Head>
