@@ -9,6 +9,12 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
+    screens: {
+      'mobile': '320px',
+      'tablets': '481px',
+      'laptops': '769px',
+      'desktop': '1025px'
+    }
   },
   variants: {
     extend: {},
