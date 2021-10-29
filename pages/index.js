@@ -5,11 +5,10 @@ import { bindActionCreators } from 'redux';
 import { authActionCreators } from '../redux';
 
 export const getStaticProps = async () => {
-  const reviews = await prisma.review.findMany({
-    where: { published: true },
-  });
+  const reviews = await prisma.review.findMany();
   return { props: { reviews } };
 };
+
 export default function Home({ reviews }) {
 
   const {auth} = useSelector((state) => state);
@@ -25,10 +24,10 @@ export default function Home({ reviews }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
-      <main className='flex flex-col justify-center items-center h-screen w-3/6 bg-gray-100'>
-        <h1 className='text-center text-5xl my-6 p-3'>Welcome To Interview Prep</h1>
+      <main className='flex flex-col items-center justify-center w-3/6 h-screen bg-gray-100'>
+        <h1 className='p-3 my-6 text-5xl text-center'>Welcome To Interview Prep</h1>
         {auth.isLoggedIn ? <button>Search Jobs</button> : 
-        <button className='bg-gray-600 text-white text-2xl hover:bg-gray-400 w-3/12 h-20 rounded-md'>Login</button>}
+        <button className='w-3/12 h-20 text-2xl text-white bg-gray-600 rounded-md hover:bg-gray-400'>Login</button>}
       </main> 
     </div>
   );
