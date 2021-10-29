@@ -1,3 +1,5 @@
+import Company from '../components/postInterview/company';
+import JobTitle from '../components/postInterview/jobtitle';
 import JobType from '../components/postInterview/jobtype';
 import Languages from '../components/postInterview/languages';
 import Location from '../components/postInterview/location';
@@ -9,6 +11,11 @@ export default function PostInterview() {
         <JobType />
         <Languages />
         <Location />
+        <div className="flex justify-evenly">
+          <h1>Job Details</h1>
+          <Company />
+          <JobTitle />
+        </div>
       </div>
     </div>
   );
