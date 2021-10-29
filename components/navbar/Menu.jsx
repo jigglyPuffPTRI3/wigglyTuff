@@ -1,8 +1,8 @@
-import MenuSVG from "./MenuSVG";
+import MenuSVG from "./menuSVG";
 
 export default function Menu() {
     return (
-        <button className='flex items-center justify-center w-16 hover:border-2 hover:border-gray-500 rounded-3xl h-2/3'>
+        <button className='flex items-center justify-center w-16 rounded-lg hover:bg-gray-500 h-2/3'>
             <MenuSVG />
         </button>
     );
