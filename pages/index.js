@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import prisma from '../lib/prisma';
 import Image from 'next/image';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 // import { bindActionCreators } from 'redux'; 
 // import { authActionCreators } from '../redux';
 
@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 export default function Home() {
 
   const {auth} = useSelector((state) => state);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const {updateFirstName, updateLastName} = bindActionCreators(authActionCreators, dispatch);
   console.log(auth.isLoggedIn);
 
