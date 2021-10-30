@@ -13,13 +13,14 @@ import Feedback from '../components/postInterview/feedback';
 export default function PostInterview() {
   const router = useRouter();
   const [jobType, setJobType] = useState('');
+  const [officePolicy, setOfficePolicy] = useState('');
   const [company, setCompany] = useState('');
   const [jobTitle, setJobTitle] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('/api/addReview', { company, jobTitle, jobType})
+      .post('/api/addReview', { company, jobTitle, jobType, officePolicy})
       .then((newInterview) => {
         console.log('newInterview', newInterview);
         router.push('/');
@@ -32,7 +33,7 @@ export default function PostInterview() {
       <div className="flex flex-col w-2/3 px-5 py-2 bg-gray-300 divide-y divide-gray-500 rounded-lg">
         <JobType setJobType={setJobType}/>
         <Languages />
-        <Location />
+        <Location setOfficePolicy={setOfficePolicy}/>
         <div className="flex">
           <h1 className="flex items-center w-1/6 text-3xl">Job Details:</h1>
           <div className="flex items-center m-auto">
