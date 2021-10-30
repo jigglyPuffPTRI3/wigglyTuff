@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import prisma from '../lib/prisma';
+import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux'; 
 import { authActionCreators } from '../redux';
@@ -29,6 +30,13 @@ export default function Home({ reviews }) {
         {auth.isLoggedIn ? <button>Search Jobs</button> : 
         <button className='w-3/12 h-20 text-2xl text-white bg-gray-600 rounded-md hover:bg-gray-400'>Login</button>}
       </main> 
+      <div className='relative w-1/2 h-screen'>
+          <Image 
+            src='/womanCoding.jpg'
+            alt='Woman Coding'
+            layout='fill'
+          />
+      </div>
     </div>
   );
 }

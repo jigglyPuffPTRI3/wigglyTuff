@@ -13,13 +13,14 @@ datasource db {
 model User {
   id              Int       @default(autoincrement()) @id
   name            String?
-  profilePicture  String?
+  image           String?
   handle          String?   @unique
   email           String?   @unique
   emailVerified   DateTime? @map(name: "email_verified")
   createdAt       DateTime  @default(now()) @map(name: "created_at")
   updatedAt       DateTime  @updatedAt @map(name: "updated_at")
   reviews         Review[]
+
   @@map(name: "users")
 }
 
@@ -73,5 +74,6 @@ model Session {
   accessToken  String   @unique @map(name: "access_token")
   createdAt    DateTime @default(now()) @map(name: "created_at")
   updatedAt    DateTime @default(now()) @map(name: "updated_at")
+
   @@map(name: "sessions")
 }
