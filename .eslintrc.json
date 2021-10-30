@@ -1,12 +1,9 @@
 {
-  "extends": [
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "plugin:prettier/react"
-  ],
-  "plugins": ["react", "prettier", "eslint-plugin-prettier"],
+  "extends": ["plugin:react/recommended", "plugin:prettier/recommended"],
+  "plugins": ["react", "prettier"],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
   },
   "globals": {
     "React": "writable"
