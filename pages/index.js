@@ -2,8 +2,8 @@ import Head from 'next/head';
 import prisma from '../lib/prisma';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux'; 
-import { authActionCreators } from '../redux';
+// import { bindActionCreators } from 'redux'; 
+// import { authActionCreators } from '../redux';
 
 export const getStaticProps = async () => {
   const reviews = await prisma.review.findMany();

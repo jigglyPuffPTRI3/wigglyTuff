@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import ReviewCard from '../components/reviewsList/reviewCard';
 
-export default function reviewsList() {
+export default function ReviewsList() {
     const { reviews } = useSelector((state) => state.reviews)
 
     return (
