@@ -1,5 +1,5 @@
 import Logo from './logo';
-import SearchBar from "./searchBar";
+import SearchBar from "./SearchBar";
 import RouteButtons from './routeButtons';
 
 export default function Navbar() {
