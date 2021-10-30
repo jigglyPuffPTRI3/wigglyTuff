@@ -3,6 +3,7 @@ import JobTitle from '../components/postInterview/jobtitle';
 import JobType from '../components/postInterview/jobtype';
 import Languages from '../components/postInterview/languages';
 import Location from '../components/postInterview/location';
+import Salary from '../components/postInterview/salaryRange';
 
 export default function PostInterview() {
   return (
@@ -11,11 +12,15 @@ export default function PostInterview() {
         <JobType />
         <Languages />
         <Location />
-        <div className="flex justify-evenly">
-          <h1>Job Details</h1>
-          <Company />
-          <JobTitle />
+        <div className="flex">
+          <h1 className="flex items-center w-1/6 text-3xl">Job Details:</h1>
+          <div className="flex items-center m-auto">
+            <Company />
+            <JobTitle />
+            <Salary/>
+          </div>
         </div>
+	  
       </div>
     </div>
   );

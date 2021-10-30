@@ -1,7 +1,7 @@
 import { ExclamationCircleIcon } from '@heroicons/react/solid';
 export default function JobTitle() {
   return (
-    <div className="w-1/3">
+    <div className="ml-10 mr-10 ">
       <label
         htmlFor="email"
         className="text-sm font-medium text-gray-700 center"

@@ -1,7 +1,7 @@
 export default function Location() {
   return (
     <div className="flex">
-      <div className="flex items-center">
+      <div className="flex items-center w-1/6">
         <h1 className="text-3xl">Location:</h1>
       </div>
       <div className="flex justify-evenly">

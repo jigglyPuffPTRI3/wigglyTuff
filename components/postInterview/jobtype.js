@@ -1,7 +1,7 @@
 export default function JobType() {
   return (
     <div className="flex">
-      <div className="flex items-center">
+      <div className="flex items-center w-1/6">
         <h1 className="text-3xl">Job Type:</h1>
       </div>
       <div className="flex justify-evenly">
