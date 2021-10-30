@@ -14,7 +14,7 @@ export default function ReviewCard() {
                 numberOfStars={4}
                 starDimension='30px'
             />
-            <Link href='/testRoute'>
+            <Link href='/positionReview'>
                 <button className='p-2 my-5 text-lg font-medium text-white bg-gray-600 border-2 border-gray-600 rounded-lg hover:bg-gray-300 hover:text-gray-600'>
                     Full Review
                 </button>
