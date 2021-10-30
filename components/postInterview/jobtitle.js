@@ -8,7 +8,7 @@ export default function JobTitle({ jobTitle, setJobTitle }) {
           name="jobtitle"
           id="jobtitle"
           className="block w-full pr-10 text-gray-900 placeholder-gray-500 border-gray-300 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm"
-          placeholder="Type in the job title here."
+          placeholder="Job Title."
           value={jobTitle}
           onChange={(e) => setJobTitle(e.target.value)}
         />
