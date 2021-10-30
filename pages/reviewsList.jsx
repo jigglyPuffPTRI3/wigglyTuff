@@ -1,19 +1,12 @@
+import { useSelector, useDispatch } from 'react-redux';
 import ReviewCard from '../components/reviewsList/reviewCard';
 
 export default function reviewsList() {
+    const { reviews } = useSelector((state) => state.reviews)
+
     return (
         <section className='flex flex-row flex-wrap justify-center my-10'>
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
+            {reviews.map((review) => <ReviewCard review={review} key={review.id} />)}
         </section>
     );
 }

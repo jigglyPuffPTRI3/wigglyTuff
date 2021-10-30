@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import StarRatings from "react-star-ratings";
 
-export default function ReviewCard() {
+export default function ReviewCard({ review }) {
     return (
         <div className='flex flex-col items-center justify-center m-6 border-2 border-gray-300 shadow-lg h-96 w-72'>
-            <h2 className='m-3 text-2xl font-bold'>Company Name</h2>
+            <h2 className='m-3 text-2xl font-bold'>{review.jobTitle}</h2>
             <p className='mx-4 my-3 text-lg text-center'>This is where the review witll be. maybe it will be cut
                 off to encourage people to click on the see full review button at the bottom.....
             </p>

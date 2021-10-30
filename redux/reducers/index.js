@@ -4,7 +4,7 @@ import authReducer from './authReducer';
 
 // creates a store of reducers
 const reducers = combineReducers({
-    createReview: createReviewReducer, 
+    reviews: createReviewReducer, 
     auth: authReducer,
 });
 
