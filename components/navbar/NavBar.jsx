@@ -1,7 +1,6 @@
 import Logo from './logo';
 import SearchBar from "./searchBar";
 import RouteButtons from './routeButtons';
-import Menu from './menu';
 
 export default function Navbar() {
   return (

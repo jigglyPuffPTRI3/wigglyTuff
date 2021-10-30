@@ -10,11 +10,11 @@ export const getStaticProps = async () => {
   return { props: { reviews } };
 };
 
-export default function Home({ reviews }) {
+export default function Home() {
 
   const {auth} = useSelector((state) => state);
   const dispatch = useDispatch();
-  const {updateFirstName, updateLastName} = bindActionCreators(authActionCreators, dispatch);
+  // const {updateFirstName, updateLastName} = bindActionCreators(authActionCreators, dispatch);
   console.log(auth.isLoggedIn);
 
   return (

@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ReviewCard from '../components/reviewsList/reviewCard';
 
 export default function reviewsList() {

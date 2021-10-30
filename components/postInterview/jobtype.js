@@ -18,6 +18,7 @@ export default function JobType() {
               type="radio"
               name="frontendengineer"
               check={radiocheck.frontendengineer}
+              onChange={(e) => setRadioChecked(e.target.name)}
             />
             <span>Front End Engineer</span>
           </label>
