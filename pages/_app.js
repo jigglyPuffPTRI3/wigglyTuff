@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import Navbar from '../components/navbar/navBar';
+import Navbar from '../components/navbar/NavBar';
 import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps }) {

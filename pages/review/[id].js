@@ -14,6 +14,6 @@ export const getServerSideProps = async ({ params }) => {
   return { props: { review } };
 };
 
-export default function Review({ review }) {
+export default function Review() {
   return <h1>Review</h1>;
 }
