@@ -1,6 +1,6 @@
 export default function Salary() {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center mt-2 mb-2">
       <h1 className="text-3xl">Salary Range:</h1>
       <div className="px-4">
         <label
