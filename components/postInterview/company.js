@@ -26,7 +26,7 @@ export default function Company() {
         </div>
       </div>
       <p className="mt-2 text-sm text-red-600" id="email-error">
-        You must put in a company name.
+        You must put in a company.
       </p>
     </div>
   );

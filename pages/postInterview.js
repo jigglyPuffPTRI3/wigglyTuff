@@ -8,7 +8,7 @@ import Salary from '../components/postInterview/salaryRange';
 export default function PostInterview() {
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="flex flex-col w-2/3 px-5 py-2 bg-red-300 divide-y divide-red-500 rounded-lg">
+      <div className="flex flex-col w-2/3 px-5 py-2 bg-gray-300 divide-y divide-gray-500 rounded-lg">
         <JobType />
         <Languages />
         <Location />
