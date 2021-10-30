@@ -1,3 +1,4 @@
+import Categories from '../components/postInterview/categories';
 import Company from '../components/postInterview/company';
 import JobTitle from '../components/postInterview/jobtitle';
 import JobType from '../components/postInterview/jobtype';
@@ -20,7 +21,7 @@ export default function PostInterview() {
             <Salary/>
           </div>
         </div>
-	  
+        <Categories />
       </div>
     </div>
   );
