@@ -1,4 +1,10 @@
+import { useState } from 'react';
+
 export default function JobType() {
+  const [radiocheck, setRadioChecked] = useState({
+    frontendengineer: true,
+  });
+
   return (
     <div className="flex">
       <div className="flex items-center w-1/6">
@@ -11,7 +17,7 @@ export default function JobType() {
               className="mr-2"
               type="radio"
               name="frontendengineer"
-              value="front end engineer"
+              check={radiocheck.frontendengineer}
             />
             <span>Front End Engineer</span>
           </label>
