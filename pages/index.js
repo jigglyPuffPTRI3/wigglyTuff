@@ -13,9 +13,6 @@ export const getStaticProps = async () => {
 export default function Home({ reviews }) {
 
   const {auth} = useSelector((state) => state);
-  const dispatch = useDispatch();
-  const {updateFirstName, updateLastName} = bindActionCreators(authActionCreators, dispatch);
-  console.log(auth.isLoggedIn);
 
   return (
     <div className='flex'>

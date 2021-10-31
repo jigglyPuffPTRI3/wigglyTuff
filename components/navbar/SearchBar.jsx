@@ -8,8 +8,8 @@ import SearchSVG from "./searchSVG";
 
 export default function SearchBar() {
 
-    const reviews = useSelector((state) => state.reviews)
-    const dispatch = useDispatch()
+    const reviews = useSelector((state) => state.reviews);
+    const dispatch = useDispatch();
     const { updateReviews } = bindActionCreators(reviewActionCreator, dispatch);
 
     const router = useRouter();
@@ -32,7 +32,7 @@ export default function SearchBar() {
     }
 
     return (
-        <form className='flex items-center justify-center border-2 border-gray-600 rounded-lg'>
+        <form className='flex items-center justify-center border-2 border-gray-600 rounded-lg' onSubmit={getReviews}>
             <input
                 className='h-12 px-5 text-lg rounded-l-lg outline-none w-96'
                 placeholder='Search Companies'
@@ -40,7 +40,7 @@ export default function SearchBar() {
                 onKeyDown={onEnterButton}
                 value={formValue}
             />
-            <button className='flex items-center justify-center w-16 h-12 bg-white rounded-r-lg' onClick={getReviews}>
+            <button className='flex items-center justify-center w-16 h-12 bg-white rounded-r-lg'>
                 <SearchSVG />
             </button>
         </form>
