@@ -1,4 +1,4 @@
-export default function Salary({setSalaryLow, setSalaryHigh}) {
+export default function Salary({setSalaryRangeLow, setSalaryRangeHigh}) {
   return (
     <div className="flex items-center mt-2 mb-2">
       <h1 className="text-3xl">Salary Range:</h1>
@@ -14,7 +14,7 @@ export default function Salary({setSalaryLow, setSalaryHigh}) {
           name="salarybase"
           className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           defaultValue="70k"
-          onChange={(e)=>setSalaryLow(e.target.value)}
+          onChange={(e)=>setSalaryRangeLow(e.target.value)}
         >
           <option value={70}>70k</option>
           <option value={80}>80k</option>
@@ -36,7 +36,7 @@ export default function Salary({setSalaryLow, setSalaryHigh}) {
           name="salarymax"
           className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           defaultValue="150k"
-          onChange={(e)=>setSalaryHigh(e.target.value)}
+          onChange={(e)=>setSalaryRangeHigh(e.target.value)}
         >
           <option value={150}>150k</option>
           <option value={175}>175k</option>

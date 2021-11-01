@@ -1,4 +1,3 @@
-import { ExclamationCircleIcon } from '@heroicons/react/solid';
 export default function Company({ company, setCompany }) {
   return (
     <div className="ml-10 mr-10">

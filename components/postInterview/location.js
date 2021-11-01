@@ -1,10 +1,10 @@
-export default function Location({setLocation}) {
+export default function Location({setOfficePolicy}) {
   return (
     <div className="flex">
       <div className="flex items-center w-1/6">
         <h1 className="text-3xl">Location:</h1>
       </div>
-      <form className="flex justify-evenly" onChange={(e)=>setLocation(e.target.value)}>
+      <form className="flex justify-evenly" onChange={(e)=>setOfficePolicy(e.target.value)}>
         <div className="ml-10">
           {/* <form> */}
             <label className="flex items-center p-2">

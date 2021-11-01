@@ -12,6 +12,9 @@ import Feedback from '../components/postInterview/feedback';
 
 export default function PostInterview() {
   const router = useRouter();
+  const [jobType, setJobType] = useState('');
+  const [languages, setLanguages] = useState('');
+  const [officePolicy, setOfficePolicy] = useState('');
   const [company, setCompany] = useState('');
   const [jobTitle, setJobTitle] = useState('');
   const [feedback, setFeedback] = useState('');
@@ -19,16 +22,15 @@ export default function PostInterview() {
   const [takeHome, setTakeHome] = useState(0)
   const [systemDesign, setSystemDesign] = useState(0)
   const [liveCoding, setLiveCoding] = useState(0)
-  const [location, setLocation] = useState('')
   const [jobType, setJobType] = useState('')
   const [languages, setLanguages] = useState([])
-  const [salaryLow, setSalaryLow] = useState(70)
-  const [salaryHigh, setSalaryHigh] = useState(150)
+  const [salaryRangeLow, setSalaryRangeLow] = useState(70)
+  const [salaryRangeHigh, setSalaryRangeHigh] = useState(150)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('/api/addReview', { jobType, languages, location, company, jobTitle, salaryLow, salaryHigh, feedback, algorithms, systemDesign, takeHome, liveCoding })
+      .post('/api/addReview', { jobType, languages, officePolicy, company, jobTitle, salaryRangeLow, salaryRangeHigh, feedback, algorithms, systemDesign, takeHome, liveCoding })
       .then((newInterview) => {
         console.log('newInterview', newInterview);
         router.push('/');
@@ -41,13 +43,13 @@ export default function PostInterview() {
       <div className="flex flex-col w-2/3 px-5 py-2 bg-gray-300 divide-y divide-gray-500 rounded-lg">
         <JobType setJobType={setJobType}/>
         <Languages setLanguages={setLanguages}/>
-        <Location setLocation={setLocation}/>
+        <Location setOfficePolicy={setOfficePolicy}/>
         <div className="flex">
           <h1 className="flex items-center w-1/6 text-3xl">Job Details:</h1>
           <div className="flex items-center m-auto">
             <Company company={company} setCompany={setCompany} />
             <JobTitle setJobTitle={setJobTitle} />
-            <Salary setSalaryLow={setSalaryLow} setSalaryHigh={setSalaryHigh}/>
+            <Salary setSalaryLow={setSalaryRangeLow} setSalaryHigh={setSalaryRangeHigh}/>
           </div>
         </div>
         <div className="flex items-center">
