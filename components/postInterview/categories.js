@@ -16,7 +16,7 @@ export default function Categories({algorithms, setAlgorithms, takeHome, setTake
               name="algorithms"
               className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               defaultValue="70k"
-              onChange={(e)=>setAlgorithms(e.target.value)}
+              onChange={(e)=>setAlgorithms(parseInt(e.target.value))}
             >
               <option>0 - not present</option>
               <option>1</option>
@@ -38,7 +38,7 @@ export default function Categories({algorithms, setAlgorithms, takeHome, setTake
               name="takehome"
               className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               defaultValue="70k"
-              onChange={(e)=>setTakeHome(e.target.value)}
+              onChange={(e)=>setTakeHome(parseInt(e.target.value))}
             >
               <option>0 - not present</option>
               <option>1</option>
@@ -62,7 +62,7 @@ export default function Categories({algorithms, setAlgorithms, takeHome, setTake
               name="systemdesign"
               className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               defaultValue="70k"
-              onChange={(e)=>setSystemDesign(e.target.value)}
+              onChange={(e)=>setSystemDesign(parseInt(e.target.value))}
             >
               <option>0 - not present</option>
               <option>1</option>
@@ -84,7 +84,7 @@ export default function Categories({algorithms, setAlgorithms, takeHome, setTake
               name="livecoding"
               className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               defaultValue="70k"
-              onChange={(e)=>setLiveCoding(e.target.value)}
+              onChange={(e)=>setLiveCoding(parseInt(e.target.value))}
             >
               <option>0 - not present</option>
               <option>1</option>

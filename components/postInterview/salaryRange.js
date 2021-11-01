@@ -14,7 +14,7 @@ export default function Salary({setSalaryRangeLow, setSalaryRangeHigh}) {
           name="salarybase"
           className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           defaultValue="70k"
-          onChange={(e)=>setSalaryRangeLow(e.target.value)}
+          onChange={(e)=>setSalaryRangeLow(parseInt(e.target.value))}
         >
           <option value={70}>70k</option>
           <option value={80}>80k</option>
@@ -36,7 +36,7 @@ export default function Salary({setSalaryRangeLow, setSalaryRangeHigh}) {
           name="salarymax"
           className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           defaultValue="150k"
-          onChange={(e)=>setSalaryRangeHigh(e.target.value)}
+          onChange={(e)=>setSalaryRangeHigh(parseInt(e.target.value))}
         >
           <option value={150}>150k</option>
           <option value={175}>175k</option>

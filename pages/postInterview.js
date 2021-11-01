@@ -12,12 +12,10 @@ import Feedback from '../components/postInterview/feedback';
 
 export default function PostInterview() {
   const router = useRouter();
-  const [jobType, setJobType] = useState('');
-  const [languages, setLanguages] = useState('');
   const [officePolicy, setOfficePolicy] = useState('');
   const [company, setCompany] = useState('');
   const [jobTitle, setJobTitle] = useState('');
-  const [feedback, setFeedback] = useState('');
+  const [content, setContent] = useState('');
   const [algorithms, setAlgorithms] = useState(0)
   const [takeHome, setTakeHome] = useState(0)
   const [systemDesign, setSystemDesign] = useState(0)
@@ -30,7 +28,7 @@ export default function PostInterview() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('/api/addReview', { jobType, languages, officePolicy, company, jobTitle, salaryRangeLow, salaryRangeHigh, feedback, algorithms, systemDesign, takeHome, liveCoding })
+      .post('/api/addReview', { jobType, officePolicy, company, jobTitle, salaryRangeLow, salaryRangeHigh, content, algorithms, systemDesign, takeHome, liveCoding })
       .then((newInterview) => {
         console.log('newInterview', newInterview);
         router.push('/');
@@ -49,7 +47,7 @@ export default function PostInterview() {
           <div className="flex items-center m-auto">
             <Company company={company} setCompany={setCompany} />
             <JobTitle setJobTitle={setJobTitle} />
-            <Salary setSalaryLow={setSalaryRangeLow} setSalaryHigh={setSalaryRangeHigh}/>
+            <Salary setSalaryRangeLow={setSalaryRangeLow} setSalaryRangeHigh={setSalaryRangeHigh}/>
           </div>
         </div>
         <div className="flex items-center">
@@ -61,7 +59,7 @@ export default function PostInterview() {
         </p>
       </div>
           <Categories algorithms={algorithms} setAlgorithms={setAlgorithms} takeHome={takeHome} setTakeHome={setTakeHome} systemDesign={systemDesign} setSystemDesign={setSystemDesign} liveCoding={liveCoding} setLiveCoding={setLiveCoding}/>
-          <Feedback feedback={feedback} setFeedback={setFeedback}/>
+          <Feedback content={content} setContent={setContent}/>
         </div>
       </div>
       <div>
