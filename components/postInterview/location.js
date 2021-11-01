@@ -1,32 +1,35 @@
-export default function Location() {
+export default function Location({setLocation}) {
   return (
     <div className="flex">
       <div className="flex items-center w-1/6">
         <h1 className="text-3xl">Location:</h1>
       </div>
-      <div className="flex justify-evenly">
+      <form className="flex justify-evenly" onChange={(e)=>setLocation(e.target.value)}>
         <div className="ml-10">
-          <label className="flex items-center p-2">
-            <input
-              className="mr-2"
-              type="radio"
-              name="On-site"
-              value="On-site"
-            />
-            <span>On-site</span>
-          </label>
-          <label className="flex items-center p-2">
-            <input className="mr-2" type="radio" name="Remote" value="Remote" />
-            <span>Remote</span>
-          </label>
+          {/* <form> */}
+            <label className="flex items-center p-2">
+              <input
+                className="mr-2"
+                type="radio"
+                name="job-location"
+                value="On-site"
+                
+              />
+              <span>On-site</span>
+            </label>
+            <label className="flex items-center p-2">
+              <input className="mr-2" type="radio" name="job-location" value="Remote" />
+              <span>Remote</span>
+            </label>
+          </div>
+          <div className="ml-10">
+            <label className="flex items-center p-2">
+              <input className="mr-2" type="radio" name="job-location" value="Hybrid" />
+              <span>Hybrid</span>
+            </label>
+          
         </div>
-        <div className="ml-10">
-          <label className="flex items-center p-2">
-            <input className="mr-2" type="radio" name="Hybrid" value="Hybrid" />
-            <span>Hybrid</span>
-          </label>
-        </div>
-      </div>
+      </form>
     </div>
   );
 }

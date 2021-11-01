@@ -1,9 +1,9 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-export default function Feedback() {
+export default function Feedback({feedback, setFeedback}) {
   const [open, setOpen] = useState(false);
-  const [feedback, setFeedback] = useState('');
+  
 
   return (
     <div >

@@ -14,11 +14,21 @@ export default function PostInterview() {
   const router = useRouter();
   const [company, setCompany] = useState('');
   const [jobTitle, setJobTitle] = useState('');
+  const [feedback, setFeedback] = useState('');
+  const [algorithms, setAlgorithms] = useState(0)
+  const [takeHome, setTakeHome] = useState(0)
+  const [systemDesign, setSystemDesign] = useState(0)
+  const [liveCoding, setLiveCoding] = useState(0)
+  const [location, setLocation] = useState('')
+  const [jobType, setJobType] = useState('')
+  const [languages, setLanguages] = useState([])
+  const [salaryLow, setSalaryLow] = useState(70)
+  const [salaryHigh, setSalaryHigh] = useState(150)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('/api/addReview', { company, jobTitle })
+      .post('/api/addReview', { jobType, languages, location, company, jobTitle, salaryLow, salaryHigh, feedback, algorithms, systemDesign, takeHome, liveCoding })
       .then((newInterview) => {
         console.log('newInterview', newInterview);
         router.push('/');
@@ -29,15 +39,15 @@ export default function PostInterview() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="flex flex-col w-2/3 px-5 py-2 bg-gray-300 divide-y divide-gray-500 rounded-lg">
-        <JobType />
-        <Languages />
-        <Location />
+        <JobType setJobType={setJobType}/>
+        <Languages setLanguages={setLanguages}/>
+        <Location setLocation={setLocation}/>
         <div className="flex">
           <h1 className="flex items-center w-1/6 text-3xl">Job Details:</h1>
           <div className="flex items-center m-auto">
             <Company company={company} setCompany={setCompany} />
-            <JobTitle jobTitle={jobTitle} setJobTitle={setJobTitle} />
-            <Salary />
+            <JobTitle setJobTitle={setJobTitle} />
+            <Salary setSalaryLow={setSalaryLow} setSalaryHigh={setSalaryHigh}/>
           </div>
         </div>
         <div className="flex items-center">
@@ -48,8 +58,8 @@ export default function PostInterview() {
           Click the dropdowns to rate on a scale from 0 - 5.
         </p>
       </div>
-          <Categories />
-          <Feedback />
+          <Categories algorithms={algorithms} setAlgorithms={setAlgorithms} takeHome={takeHome} setTakeHome={setTakeHome} systemDesign={systemDesign} setSystemDesign={setSystemDesign} liveCoding={liveCoding} setLiveCoding={setLiveCoding}/>
+          <Feedback feedback={feedback} setFeedback={setFeedback}/>
         </div>
       </div>
       <div>
