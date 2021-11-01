@@ -1,19 +1,6 @@
-import {useState} from 'react';
-
 export default function Languages({setLanguages}) {
-  
-  const manageLanguages = (e) => {
-    //only adds checkedValues
-    if(e.target.checked === true){
-      setLanguages(prevState => ([
-        ...prevState,
-        e.target.value
-      ]))
-    }
-  }
-  
   return (
-    <div className="flex">
+    <form className="flex" onChange={(e)=>setLanguages(oldArr=>[...oldArr, e.target.value])}>
       <div className="flex items-center w-1/6">
         <h1 className="text-3xl">Languages:</h1>
       </div>
@@ -25,6 +12,7 @@ export default function Languages({setLanguages}) {
               className="mr-2 appearance-none checked:bg-blue-600 checked:border-transparent"
               name="Javascript"
               value="Javascript"
+              
             />
             <span>Javascript</span>
           </label>
@@ -34,7 +22,7 @@ export default function Languages({setLanguages}) {
               type="checkbox"
               name="Python"
               value="Python"
-              onChange={(e)=> {manageLanguages(e)}}
+              // onChange={()=>setLanguages(oldArr=>[...oldArr, 'Python'])}
             />
             <span>Python</span>
           </label>
@@ -55,6 +43,7 @@ export default function Languages({setLanguages}) {
               type="checkbox"
               name="C++"
               value="C++"
+              // onChange={()=>setLanguages(oldArr=>[...oldArr, 'C++'])}
             />
             <span>C++</span>
           </label>
@@ -66,6 +55,7 @@ export default function Languages({setLanguages}) {
               type="checkbox"
               name="Ruby"
               value="Ruby"
+              // onChange={()=>setLanguages(oldArr=>[...oldArr, 'Ruby'])}
             />
             <span>Ruby</span>
           </label>
@@ -75,11 +65,12 @@ export default function Languages({setLanguages}) {
               type="checkbox"
               name="Go"
               value="Go"
+              // onChange={()=>setLanguages(oldArr=>[...oldArr, 'Go'])}
             />
             <span>Go</span>
           </label>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
