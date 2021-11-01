@@ -13,6 +13,7 @@ import Feedback from '../components/postInterview/feedback';
 export default function PostInterview() {
   const router = useRouter();
   const [jobType, setJobType] = useState('');
+  const [languages, setLanguages] = useState('');
   const [officePolicy, setOfficePolicy] = useState('');
   const [company, setCompany] = useState('');
   const [jobTitle, setJobTitle] = useState('');
@@ -20,7 +21,7 @@ export default function PostInterview() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('/api/addReview', { company, jobTitle, jobType, officePolicy})
+      .post('/api/addReview', { company, jobTitle, jobType, officePolicy, ...languages})
       .then((newInterview) => {
         console.log('newInterview', newInterview);
         router.push('/');
@@ -32,7 +33,7 @@ export default function PostInterview() {
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="flex flex-col w-2/3 px-5 py-2 bg-gray-300 divide-y divide-gray-500 rounded-lg">
         <JobType setJobType={setJobType}/>
-        <Languages />
+        <Languages setLanguages={setLanguages}/>
         <Location setOfficePolicy={setOfficePolicy}/>
         <div className="flex">
           <h1 className="flex items-center w-1/6 text-3xl">Job Details:</h1>
