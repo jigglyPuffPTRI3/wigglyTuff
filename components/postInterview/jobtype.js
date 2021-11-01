@@ -1,10 +1,33 @@
-import { useState } from 'react';
+import { useState} from 'react';
 
-export default function JobType() {
+export default function JobType({setJobType}) {
   const [radiocheck, setRadioChecked] = useState({
-    frontendengineer: true,
+    'frontend engineer': false,
+    'backend engineer': false,
+    'fullstack engineer': false,
+    'test engineer': false,
+    'devops engineer': false
   });
 
+  const radioChanger = (value) => {
+    setRadioChecked({
+      'frontend engineer': false,
+      'backend engineer': false,
+      'fullstack engineer': false,
+      'test engineer': false,
+      'devops engineer': false
+    });
+    setRadioChecked(prevState => ({
+      ...prevState,
+      [value]:true
+    }));
+    setJobType(value);
+  }
+
+  
+
+  const [selectedJob, changeSelectedRole] = useState('');
+  
   return (
     <div className="flex">
       <div className="flex items-center w-1/6">
@@ -17,8 +40,9 @@ export default function JobType() {
               className="mr-2"
               type="radio"
               name="frontendengineer"
-              check={radiocheck.frontendengineer}
-              onChange={(e) => setRadioChecked(e.target.name)}
+              value="frontend engineer"
+              checked={radiocheck["frontend engineer"]}
+              onChange={(e)=>{radioChanger(e.target.value)}}
             />
             <span>Front End Engineer</span>
           </label>
@@ -27,7 +51,9 @@ export default function JobType() {
               className="mr-2"
               type="radio"
               name="backendengineer"
-              value="back end engineer"
+              value="backend engineer"
+              checked={radiocheck["backend engineer"]}
+              onChange={(e)=>{radioChanger(e.target.value)}}
             />
             <span>Back End Engineer</span>
           </label>
@@ -37,8 +63,10 @@ export default function JobType() {
             <input
               className="mr-2"
               type="radio"
-              name="fullstackengineer"
+              name="fsengineer"
               value="fullstack engineer"
+              checked={radiocheck["fullstack engineer"]}
+              onChange={(e)=>{radioChanger(e.target.value)}}
             />
             <span>Fullstack Engineer</span>
           </label>
@@ -48,6 +76,8 @@ export default function JobType() {
               type="radio"
               name="testengineer"
               value="test engineer"
+              checked={radiocheck["test engineer"]}
+              onChange={(e)=>{radioChanger(e.target.value)}}
             />
             <span>Test Engineer</span>
           </label>
@@ -59,6 +89,8 @@ export default function JobType() {
               type="radio"
               name="devopsengineer"
               value="devops engineer"
+              checked={radiocheck["devops engineer"]}
+              onChange={(e)=>{radioChanger(e.target.value)}}
             />
             <span>Devops Engineer</span>
           </label>

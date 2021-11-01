@@ -1,4 +1,17 @@
-export default function Languages() {
+import {useState} from 'react';
+
+export default function Languages({setLanguages}) {
+  
+  const manageLanguages = (e) => {
+    //only adds checkedValues
+    if(e.target.checked === true){
+      setLanguages(prevState => ([
+        ...prevState,
+        e.target.value
+      ]))
+    }
+  }
+  
   return (
     <div className="flex">
       <div className="flex items-center w-1/6">
@@ -21,6 +34,7 @@ export default function Languages() {
               type="checkbox"
               name="Python"
               value="Python"
+              onChange={(e)=> {manageLanguages(e)}}
             />
             <span>Python</span>
           </label>
