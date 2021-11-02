@@ -28,7 +28,7 @@ export default function PostInterview() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('/api/addReview', { jobType, officePolicy, company, jobTitle, salaryRangeLow, salaryRangeHigh, content, algorithms, systemDesign, takeHome, liveCoding })
+      .post('/api/addReview', { jobType, officePolicy, company, jobTitle, salaryRangeLow, salaryRangeHigh, content, algorithms, systemDesign, takeHome, liveCoding, languages })
       .then((newInterview) => {
         console.log('newInterview', newInterview);
         router.push('/');
