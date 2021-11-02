@@ -40,7 +40,7 @@ export default function Salary({setSalaryRangeLow, setSalaryRangeHigh}) {
         >
           <option value={150}>150k</option>
           <option value={175}>175k</option>
-          <option value={200}>2000k</option>
+          <option value={200}>200k</option>
           <option value={225}>225k</option>
           <option value={250}>250k</option>
           <option value={275}>275k</option>

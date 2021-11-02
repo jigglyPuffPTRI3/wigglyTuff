@@ -9,6 +9,9 @@ import Languages from '../components/postInterview/languages';
 import Location from '../components/postInterview/location';
 import Salary from '../components/postInterview/salaryRange';
 import Feedback from '../components/postInterview/feedback';
+import Hired from '../components/postInterview/hired';
+import Rounds from '../components/postInterview/roundsofinterviews';
+import TechnicalDifficulty from '../components/postInterview/technicalDifficulty'
 
 export default function PostInterview() {
   const router = useRouter();
@@ -24,11 +27,14 @@ export default function PostInterview() {
   const [languages, setLanguages] = useState([])
   const [salaryRangeLow, setSalaryRangeLow] = useState(70)
   const [salaryRangeHigh, setSalaryRangeHigh] = useState(150)
+  const [hired, setHired] = useState('pending')
+  const [roundsOfInterviews, setRoundsOfInterviews]=useState(1)
+  const [technicalDifficulty, setTechnicalDifficulty] = useState(0)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('/api/addReview', { jobType, officePolicy, company, jobTitle, salaryRangeLow, salaryRangeHigh, content, algorithms, systemDesign, takeHome, liveCoding, languages })
+      .post('/api/addReview', { jobType, officePolicy, company, jobTitle, salaryRangeLow, salaryRangeHigh, content, algorithms, systemDesign, takeHome, liveCoding, languages, hired, roundsOfInterviews, technicalDifficulty })
       .then((newInterview) => {
         console.log('newInterview', newInterview);
         router.push('/');
@@ -60,8 +66,21 @@ export default function PostInterview() {
       </div>
           <Categories algorithms={algorithms} setAlgorithms={setAlgorithms} takeHome={takeHome} setTakeHome={setTakeHome} systemDesign={systemDesign} setSystemDesign={setSystemDesign} liveCoding={liveCoding} setLiveCoding={setLiveCoding}/>
           <Feedback content={content} setContent={setContent}/>
+          
+
         </div>
+        
+        
+        <div className="flex mt-4">
+        <h1 className="flex items-center w-1/4 text-3xl">Final Thoughts:</h1>
+        <div className="flex w-full py-4 mt-2 justify-evenly">
+            <div><Hired setHired={setHired}/></div>
+            <div><Rounds setRoundsOfInterviews={setRoundsOfInterviews}/></div>
+            <div><TechnicalDifficulty setTechnicalDifficulty={setTechnicalDifficulty}/></div>
+          </div>
       </div>
+      </div>
+      
       <div>
         <button
           type="button"
