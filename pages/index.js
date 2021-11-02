@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 export default function Home() {
   const { auth } = useSelector((state) => state);
-  console.log(auth.isLoggedIn);
 
   return (
     <div className="flex">
