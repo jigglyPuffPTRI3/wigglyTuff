@@ -5,7 +5,6 @@ export default function Languages({languages, setLanguages}) {
     }else{
       setLanguages(languages.filter(element => element !== language));
     }
-    console.log('languages: ', languages)
   }
   
   return (
