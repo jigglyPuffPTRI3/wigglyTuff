@@ -1,18 +1,24 @@
 import Head from 'next/head';
 import prisma from '../lib/prisma';
 import Image from 'next/image';
-import { useSelector, useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux'; 
-import { authActionCreators } from '../redux';
+import { useSelector } from 'react-redux';
+// import { bindActionCreators } from 'redux'; 
+// import { authActionCreators } from '../redux';
 
 export const getStaticProps = async () => {
   const reviews = await prisma.review.findMany();
   return { props: { reviews } };
 };
 
-export default function Home({ reviews }) {
+export default function Home() {
 
   const {auth} = useSelector((state) => state);
+<<<<<<< HEAD
+=======
+  // const dispatch = useDispatch();
+  // const {updateFirstName, updateLastName} = bindActionCreators(authActionCreators, dispatch);
+  console.log(auth.isLoggedIn);
+>>>>>>> dev
 
   return (
     <div className='flex'>

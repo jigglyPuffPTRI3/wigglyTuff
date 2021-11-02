@@ -1,15 +1,12 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/router';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { reviewActionCreator } from '../../redux';
 import SearchSVG from "./searchSVG";
 
 export default function SearchBar() {
-
-    const reviews = useSelector((state) => state.reviews);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
     const { updateReviews } = bindActionCreators(reviewActionCreator, dispatch);
 
     const router = useRouter();
@@ -26,10 +23,11 @@ export default function SearchBar() {
         return;
     }
 
-    const onEnterButton = (e) => {
-        if (e.keyCode === 'Enter') return getReviews(e);
-        return
-    }
+    // Not being used yet
+    // const onEnterButton = (e) => {
+    //     if (e.keyCode === 'Enter') return getReviews(e);
+    //     return
+    // }
 
     return (
         <form className='flex items-center justify-center border-2 border-gray-600 rounded-lg' onSubmit={getReviews}>

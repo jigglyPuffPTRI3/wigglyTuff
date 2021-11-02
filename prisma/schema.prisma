@@ -33,7 +33,7 @@ model Review {
   company             String?
   jobType             String?
   jobTitle            String?
-  languages           String?
+  languages           String[]
   liveCoding          Int @default(0)
   officePolicy        String?
   salaryRangeLow      Float?

@@ -1,4 +1,4 @@
-export default function Categories() {
+export default function Categories({algorithms, setAlgorithms, takeHome, setTakeHome, systemDesign, setSystemDesign, liveCoding, setLiveCoding}) {
   return (
     <div className="flex items-center w-2/3">
      
@@ -16,6 +16,7 @@ export default function Categories() {
               name="algorithms"
               className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               defaultValue="70k"
+              onChange={(e)=>setAlgorithms(parseInt(e.target.value))}
             >
               <option>0 - not present</option>
               <option>1</option>
@@ -37,6 +38,7 @@ export default function Categories() {
               name="takehome"
               className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               defaultValue="70k"
+              onChange={(e)=>setTakeHome(parseInt(e.target.value))}
             >
               <option>0 - not present</option>
               <option>1</option>
@@ -60,6 +62,7 @@ export default function Categories() {
               name="systemdesign"
               className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               defaultValue="70k"
+              onChange={(e)=>setSystemDesign(parseInt(e.target.value))}
             >
               <option>0 - not present</option>
               <option>1</option>
@@ -81,6 +84,7 @@ export default function Categories() {
               name="livecoding"
               className="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               defaultValue="70k"
+              onChange={(e)=>setLiveCoding(parseInt(e.target.value))}
             >
               <option>0 - not present</option>
               <option>1</option>

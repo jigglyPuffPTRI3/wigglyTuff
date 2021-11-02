@@ -1,9 +1,9 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-export default function Feedback() {
+export default function Feedback({content, setContent}) {
   const [open, setOpen] = useState(false);
-  const [feedback, setFeedback] = useState('');
+  
 
   return (
     <div >
@@ -60,8 +60,8 @@ export default function Feedback() {
                         name="addFeedback"
                         rows={3}
                         className="block w-full max-w-lg border border-gray-300 rounded-md shadow-sm focus:ring-gray-500 focus:border-gray-500 sm:text-sm"
-						value={feedback}
-						onChange={(e)=>{setFeedback(e.target.value)}}
+						value={content}
+						onChange={(e)=>{setContent(e.target.value)}}
                       />
                     </div>
                   </div>

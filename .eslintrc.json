@@ -1,14 +1,7 @@
 {
-  "extends": [
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "plugin:prettier/react"
-  ],
-  "plugins": ["react", "prettier", "eslint-plugin-prettier"],
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
-    "react/react-in-jsx-scope": "off"
-  },
-  "globals": {
-    "React": "writable"
+    "no-unused-vars": "error"
   }
 }
