@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import InterviewDifficulty from '../components/positionReview/interviewDifficulty';
+import Chart from '../components/positionReview/chart';
 
 export default function PositionReview() {
 
@@ -15,18 +15,17 @@ export default function PositionReview() {
                 Position: {selectedReview.jobTitle}
             </p>
             <p className='p-2 text-2xl'>
-                Interview Description: This is where the review witll be. maybe it will be cut
-                off to encourage people to click on the see full review button at the bottom but then it wont and it will be a very very long review maybe, or it might be really short who knows
+                Interview Description: {selectedReview.content ? selectedReview.content : 'No review'}
             </p>
             <p className='p-2 text-2xl'> Salary Range: {`${selectedReview.salaryRangeLow} - ${selectedReview.salaryRangeHigh} `}</p>
             <p className='p-2 text-2xl'> Location: {selectedReview.officePolicy}  </p>
             <p className='p-2 text-2xl'> Languages: {selectedReview.languages}</p>
-            <InterviewDifficulty
-                takeHome={selectedReview.takeHome}
+            <Chart
+                algos={selectedReview.algorithms}
                 liveCoding={selectedReview.liveCoding}
+                takeHome={selectedReview.takeHome}
                 systemDesign={selectedReview.systemDesign}
             />
-
         </div >
     );
 }
