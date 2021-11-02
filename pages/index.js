@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
-import SignInOut from '../components/navbar/signinout'
 
 export default function Home() {
 

@@ -3,7 +3,7 @@ import NavButton from "./navButton";
 import SignInOut from './signinout'
 
 export default function RouteButtons() {
-    const { auth } = useSelector(state => state);
+    // const { auth } = useSelector(state => state);
 
     return (
         <div className='flex items-center justify-between m-2'>
