@@ -1,4 +1,4 @@
-import NavButton from "./navButton";
+// import NavButton from "./navButton";
 import Link from 'next/link';
 
 export default function Logo() {
