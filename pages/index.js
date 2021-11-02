@@ -13,12 +13,6 @@ export const getStaticProps = async () => {
 export default function Home() {
 
   const {auth} = useSelector((state) => state);
-<<<<<<< HEAD
-=======
-  // const dispatch = useDispatch();
-  // const {updateFirstName, updateLastName} = bindActionCreators(authActionCreators, dispatch);
-  console.log(auth.isLoggedIn);
->>>>>>> dev
 
   return (
     <div className='flex'>

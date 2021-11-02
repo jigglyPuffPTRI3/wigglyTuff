@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -19,15 +20,15 @@ export default function SearchBar() {
             params: { company: formValue }
         })
         updateReviews(reviews.data.reviews);
+        setFormValue('');
         router.push('/reviewsList');
         return;
     }
 
-    // Not being used yet
-    // const onEnterButton = (e) => {
-    //     if (e.keyCode === 'Enter') return getReviews(e);
-    //     return
-    // }
+    const onEnterButton = (e) => {
+        if (e.keyCode === 'Enter') return getReviews(e);
+        return
+    }
 
     return (
         <form className='flex items-center justify-center border-2 border-gray-600 rounded-lg' onSubmit={getReviews}>
