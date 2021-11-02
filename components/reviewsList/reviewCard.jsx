@@ -27,7 +27,7 @@ export default function ReviewCard({ review }) {
             <StarRatings
                 numberOfStars={5}
                 starRatedColor='gold'
-                rating={5}
+                rating={review.technicalDifficulty ? review.technicalDifficulty : 0}
             />
             <Link href='/positionReview'>
                 <button
