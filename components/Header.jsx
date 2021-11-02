@@ -43,7 +43,7 @@ const Header = () => {
   if (loading) {
     left = (
       <div className="left">
-        <Link href="/">
+        <Link href="/" passHref>
           <a className="bold" data-active={isActive('/')}>
             Feed
           </a>
