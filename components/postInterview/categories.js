@@ -1,4 +1,4 @@
-export default function Categories({algorithms, setAlgorithms, takeHome, setTakeHome, systemDesign, setSystemDesign, liveCoding, setLiveCoding}) {
+export default function Categories({ setAlgorithms, setTakeHome, setSystemDesign, setLiveCoding}) {
   return (
     <div className="flex items-center w-2/3">
      
