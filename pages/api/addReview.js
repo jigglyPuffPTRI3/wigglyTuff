@@ -2,7 +2,9 @@ import { getSession } from 'next-auth/client';
 import prisma from '../../lib/prisma';
 
 export default async function handler(req, res) {
+  console.log('In addReview API. Req.body is: ', req.body)
   const session = await getSession({ req });
+  console.log(req.body)
   try {
     const user = await prisma.user.findUnique({
       where: {

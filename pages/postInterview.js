@@ -9,16 +9,32 @@ import Languages from '../components/postInterview/languages';
 import Location from '../components/postInterview/location';
 import Salary from '../components/postInterview/salaryRange';
 import Feedback from '../components/postInterview/feedback';
+import Hired from '../components/postInterview/hired';
+import Rounds from '../components/postInterview/roundsofinterviews';
+import TechnicalDifficulty from '../components/postInterview/technicalDifficulty'
 
 export default function PostInterview() {
   const router = useRouter();
+  const [officePolicy, setOfficePolicy] = useState('');
   const [company, setCompany] = useState('');
   const [jobTitle, setJobTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [algorithms, setAlgorithms] = useState(0)
+  const [takeHome, setTakeHome] = useState(0)
+  const [systemDesign, setSystemDesign] = useState(0)
+  const [liveCoding, setLiveCoding] = useState(0)
+  const [jobType, setJobType] = useState('')
+  const [languages, setLanguages] = useState([])
+  const [salaryRangeLow, setSalaryRangeLow] = useState(70)
+  const [salaryRangeHigh, setSalaryRangeHigh] = useState(150)
+  const [hired, setHired] = useState('pending')
+  const [roundsOfInterviews, setRoundsOfInterviews]=useState(1)
+  const [technicalDifficulty, setTechnicalDifficulty] = useState(0)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('/api/addReview', { company, jobTitle })
+      .post('/api/addReview', { jobType, officePolicy, company, jobTitle, salaryRangeLow, salaryRangeHigh, content, algorithms, systemDesign, takeHome, liveCoding, languages, hired, roundsOfInterviews, technicalDifficulty })
       .then((newInterview) => {
         console.log('newInterview', newInterview);
         router.push('/');
@@ -29,15 +45,15 @@ export default function PostInterview() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="flex flex-col w-2/3 px-5 py-2 bg-gray-300 divide-y divide-gray-500 rounded-lg">
-        <JobType />
-        <Languages />
-        <Location />
+        <JobType setJobType={setJobType}/>
+        <Languages setLanguages={setLanguages}/>
+        <Location setOfficePolicy={setOfficePolicy}/>
         <div className="flex">
           <h1 className="flex items-center w-1/6 text-3xl">Job Details:</h1>
           <div className="flex items-center m-auto">
             <Company company={company} setCompany={setCompany} />
-            <JobTitle jobTitle={jobTitle} setJobTitle={setJobTitle} />
-            <Salary />
+            <JobTitle setJobTitle={setJobTitle} />
+            <Salary setSalaryRangeLow={setSalaryRangeLow} setSalaryRangeHigh={setSalaryRangeHigh}/>
           </div>
         </div>
         <div className="flex items-center">
@@ -48,10 +64,23 @@ export default function PostInterview() {
           Click the dropdowns to rate on a scale from 0 - 5.
         </p>
       </div>
-          <Categories />
-          <Feedback />
+          <Categories algorithms={algorithms} setAlgorithms={setAlgorithms} takeHome={takeHome} setTakeHome={setTakeHome} systemDesign={systemDesign} setSystemDesign={setSystemDesign} liveCoding={liveCoding} setLiveCoding={setLiveCoding}/>
+          <Feedback content={content} setContent={setContent}/>
+          
+
         </div>
+        
+        
+        <div className="flex mt-4">
+        <h1 className="flex items-center w-1/4 text-3xl">Final Thoughts:</h1>
+        <div className="flex w-full py-4 mt-2 justify-evenly">
+            <div><Hired setHired={setHired}/></div>
+            <div><Rounds setRoundsOfInterviews={setRoundsOfInterviews}/></div>
+            <div><TechnicalDifficulty setTechnicalDifficulty={setTechnicalDifficulty}/></div>
+          </div>
       </div>
+      </div>
+      
       <div>
         <button
           type="button"
