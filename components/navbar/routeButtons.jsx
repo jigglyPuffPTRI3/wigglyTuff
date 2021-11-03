@@ -8,7 +8,7 @@ export default function RouteButtons() {
         <div className='flex items-center justify-between m-2'>
             <NavButton text='Reviews' route='/reviewsList' />
             <NavButton text='Create Review' route='/postInterview' />
-            <SignInOut/>
+            <SignInOut route='/'/>
             {/* {auth.isLoggedIn ? <NavButton text='Log Out' route='/testRoute' /> : <NavButton text='Login' route='/login' />} */}
         </div>
     );

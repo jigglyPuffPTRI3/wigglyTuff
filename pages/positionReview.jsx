@@ -5,6 +5,10 @@ export default function PositionReview() {
 
     const { selectedReview } = useSelector(state => state.reviews);
     console.log('selected review', selectedReview);
+    // const interviewLanguages=selectedReview.languages.map(el=>{
+      
+    // })
+    const interviewLanguages=selectedReview.languages.join(', ')
 
     return (
         <div className='flex'>
@@ -18,9 +22,9 @@ export default function PositionReview() {
                 <p className='p-2 text-2xl'>
                     Interview Description: {selectedReview.content ? selectedReview.content : 'No review'}
                 </p>
-                <p className='p-2 text-2xl'> Salary Range: {`${selectedReview.salaryRangeLow} - ${selectedReview.salaryRangeHigh} `}</p>
+                <p className='p-2 text-2xl'> Salary Range: {`$${selectedReview.salaryRangeLow}k - $${selectedReview.salaryRangeHigh}k `}</p>
                 <p className='p-2 text-2xl'> Location: {selectedReview.officePolicy}  </p>
-                <p className='p-2 text-2xl'> Languages: {selectedReview.languages}</p>
+                <p className='p-2 text-2xl'> Languages: {interviewLanguages}</p>
             </div >
             <Chart
                 algos={selectedReview.algorithms}
