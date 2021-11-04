@@ -8,7 +8,7 @@ export default function PositionReview() {
     // const interviewLanguages=selectedReview.languages.map(el=>{
       
     // })
-    const interviewLanguages=selectedReview.languages.join(', ')
+
 
     return (
         <div className='flex'>
@@ -24,7 +24,7 @@ export default function PositionReview() {
                 </p>
                 <p className='p-2 text-2xl'> Salary Range: {`$${selectedReview.salaryRangeLow}k - $${selectedReview.salaryRangeHigh}k `}</p>
                 <p className='p-2 text-2xl'> Location: {selectedReview.officePolicy}  </p>
-                <p className='p-2 text-2xl'> Languages: {interviewLanguages}</p>
+                <p className='p-2 text-2xl'> Languages: {selectedReview.languages?selectedReview.languages.join(', '):''}</p>
             </div >
             <Chart
                 algos={selectedReview.algorithms}
