@@ -6,3 +6,12 @@ export const updateReviews = (data) => {
     });
   };
 };
+
+export const selectedReviews = (review) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'SELECT_REVIEW',
+      payload: review,
+    });
+  };
+};

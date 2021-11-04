@@ -1,6 +1,14 @@
-export default function Languages({setLanguages}) {
+export default function Languages({languages, setLanguages}) {
+  const modifyLanguages=(language)=>{
+    if(!languages.includes(language)){
+      setLanguages(oldArr=>[...oldArr, language])
+    }else{
+      setLanguages(languages.filter(element => element !== language));
+    }
+  }
+  
   return (
-    <form className="flex" onChange={(e)=>setLanguages(oldArr=>[...oldArr, e.target.value])}>
+    <form className="flex" onChange={(e)=>modifyLanguages(e.target.value)}>
       <div className="flex items-center w-1/6">
         <h1 className="text-3xl">Languages:</h1>
       </div>

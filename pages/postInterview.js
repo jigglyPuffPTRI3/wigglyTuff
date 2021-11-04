@@ -46,7 +46,7 @@ export default function PostInterview() {
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="flex flex-col w-2/3 px-5 py-2 bg-gray-300 divide-y divide-gray-500 rounded-lg">
         <JobType setJobType={setJobType}/>
-        <Languages setLanguages={setLanguages}/>
+        <Languages languages={languages} setLanguages={setLanguages}/>
         <Location setOfficePolicy={setOfficePolicy}/>
         <div className="flex">
           <h1 className="flex items-center w-1/6 text-3xl">Job Details:</h1>

@@ -1,17 +1,37 @@
-export default function PositionReview() {
-    return (
-        <div className='flex flex-col m-3'>
-            <h1 className='p-2 text-5xl'>
-                Company Name: Google
-            </h1>
-            <p className='p-2 text-4xl'>
-                Position: Front-end Software Engineer
-            </p>
-            <p className='p-2 text-2xl'>
-                Interview Description: This is where the review witll be. maybe it will be cut
-                off to encourage people to click on the see full review button at the bottom but then it wont and it will be a very very long review maybe, or it might be really short who knows
-            </p>
+import { useSelector } from 'react-redux';
+import Chart from '../components/positionReview/chart';
 
-        </div >
+export default function PositionReview() {
+
+    const { selectedReview } = useSelector(state => state.reviews);
+    console.log('selected review', selectedReview);
+    // const interviewLanguages=selectedReview.languages.map(el=>{
+      
+    // })
+
+
+    return (
+        <div className='flex'>
+            <div className='flex flex-col w-2/5 m-3 justify-evenly'>
+                <h1 className='p-2 text-5xl'>
+                    Company Name: {selectedReview.company}
+                </h1>
+                <p className='p-2 text-4xl'>
+                    Position: {selectedReview.jobTitle}
+                </p>
+                <p className='p-2 text-2xl'>
+                    Interview Description: {selectedReview.content ? selectedReview.content : 'No review'}
+                </p>
+                <p className='p-2 text-2xl'> Salary Range: {`$${selectedReview.salaryRangeLow}k - $${selectedReview.salaryRangeHigh}k `}</p>
+                <p className='p-2 text-2xl'> Location: {selectedReview.officePolicy}  </p>
+                <p className='p-2 text-2xl'> Languages: {selectedReview.languages?selectedReview.languages.join(', '):''}</p>
+            </div >
+            <Chart
+                algos={selectedReview.algorithms}
+                liveCoding={selectedReview.liveCoding}
+                takeHome={selectedReview.takeHome}
+                systemDesign={selectedReview.systemDesign}
+            />
+        </div>
     );
-}
+};
