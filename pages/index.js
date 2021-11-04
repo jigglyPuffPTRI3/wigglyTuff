@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 export default function Home() {
 
