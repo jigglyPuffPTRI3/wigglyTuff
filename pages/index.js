@@ -18,13 +18,13 @@ export default function Home() {
         <h1 className="p-3 my-6 text-5xl text-center">
           Welcome To Interview Prep
         </h1>
-        {auth.isLoggedIn ? (
+        {/* {auth.isLoggedIn ? (
           <button>Search Jobs</button>
         ) : (
           <button className="w-3/12 h-20 text-2xl text-white bg-gray-600 rounded-md hover:bg-gray-400">
             Login
           </button>
-        )}
+        )} */}
       </main>
       <div className="relative w-1/2 h-screen">
         <Image src="/womanCoding.jpg" alt="Woman Coding" layout="fill" />
